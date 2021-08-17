@@ -1,5 +1,5 @@
 {
-    "sonarlint.connectedMode.project": {
-        "projectKey": "jeff-zapotoczny-sonarsource_sonar-training-app"
-    }
+    //"sonarlint.connectedMode.project": {
+    //    "projectKey": "jeff-zapotoczny-sonarsource_sonar-training-app"
+    //}
 }
