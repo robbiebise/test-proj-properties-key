@@ -1,4 +1,4 @@
-# sonar-training-app
+# Javascript Example App
 
 This is an example Javascript application suitable for demonstrating the analysis features of SonarQube.
 
