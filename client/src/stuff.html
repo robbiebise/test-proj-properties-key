@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        p {
+            color: #333;
+            font-size: 18px;
+        }
+        a {
+            color: #3c; /* Noncompliant; shorthand should be made of 3 characters */
+        }
+        div {
+            background-color: #3cb371a; /* Noncompliant; alpha should have 2 characters */
+        }
+    </style>
+</head>
+<body>
+    <button class="button" onclick="addParagraph()">Add Paragraph</button>
+    <div id="content"></div>
+
+    <script>
+        var counter = 0;
+        function addParagraph() {
+            counter++;
+            var para = document.createElement("p");
+            var node = document.createTextNode("This is paragraph " + counter);
+            para.appendChild(node);
+
+            var element = document.getElementById("content");
+            element.appendChild(para);
+        }
+        // Add paragraphs initially to reach 200 lines
+        p = NaN;
+        for (var i = 0; i < 180; i++) {
+            if (i == i+i){
+                try {
+                    addParagraph();
+                } catch(e) {
+                    throw e;
+                }
+            }
+            else if (p === NaN) {
+                addParagraph();
+            }
+            addParagraph();
+        }
+        function concatenate() {
+            let args = Array.prototype.slice.call(arguments);  // Noncompliant
+            return args.join(', ');
+            }
+
+            function doSomething(isTrue) {
+            var args = Array.prototype.slice.call(arguments, 1); // Noncompliant
+            if (!isTrue) {
+                for (var arg of args) {
+                    console.log(arg);
+                }
+            }
+            }
+    </script>
+</body>
+</html>
