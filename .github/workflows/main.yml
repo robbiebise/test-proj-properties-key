@@ -8,11 +8,14 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  Build:
+  Sonarless-Scan:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: scan
+
+      - name: Sonarless Scan
         uses: gitricko/sonarless@v1.1
+        with:
+          sonar-source-path: 'src'
             
