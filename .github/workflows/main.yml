@@ -1,4 +1,4 @@
-name: Sonarless Code Scan
+name: Sonarless-Scan
 on:
   workflow_dispatch:
   push:
@@ -8,12 +8,13 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  Sonarless-Scan:
+  scan:
+    name: Sonarless-Scan
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
+  
       - name: Sonarless Scan
         uses: gitricko/sonarless@v1.1
         with:
